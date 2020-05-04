@@ -33,6 +33,12 @@ func main() {
 
 	flag.Parse()
 
+	d := testPar()
+	s := time.Now()
+	betteExhaustiveSearch(0, len(d[0]), d)
+	fmt.Println("standard time is ",time.Since(s))
+	return
+
 	if *testFlag != "" {
 		a := loadTestMatrix(*testFlag)
 		betteExhaustiveSearch(0, len(a[0]), a)

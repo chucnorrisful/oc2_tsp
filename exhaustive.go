@@ -7,6 +7,9 @@ import (
 	"github.com/gosuri/uiprogress"
 )
 
+// 1: [0,1,2,0]
+// 2: 0210
+
 func exhaustiveSearch(src, n int, dist [][]int) {
 	fmt.Println("exhaustive search, there are ", fac(n-1), " paths to check")
 
