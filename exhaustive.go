@@ -67,7 +67,9 @@ func betteExhaustiveSearch(src, n int, dist [][]int) {
 
 	}
 
-	fmt.Println("shortest path is ", path, "len", shortest)
+	uiprogress.Stop()
+
+	fmt.Println(" B shortest path is ", path, "len", shortest)
 }
 
 //uses parallel permutator, otherwise identical to betteExhaustiveSearch
@@ -224,7 +226,7 @@ func parallelExhaustiveSearch2(workerCnt, src, n int, dist [][]int) {
 		}
 	}
 
-	fmt.Println("shortest path is ", path, "len", shortest)
+	fmt.Println("A shortest path is ", path, "len", shortest)
 
 	return
 }
@@ -363,6 +365,7 @@ func permutate2(c chan []int, inputs []int, first int, finisher chan bool) {
 func permutate3(c chan []int, inputs []int, first int, dist [][]int) {
 	var path []int
 	var shortest = math.MaxInt32
+
 
 	d := calcPathDist(inputs, dist)
 	if d < shortest {
