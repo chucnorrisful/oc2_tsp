@@ -9,13 +9,13 @@ import csv
 
 matplotlib.use("Agg")
 
-A = genfromtxt('/home/grzfrmbl/goProjects/oc2_tsp/graph/matrix.csv', delimiter=',')
+A = genfromtxt('graph/matrix.csv', delimiter=',')
 
 dt = [('len', float)]
 A = A.view(dt)
 G = nx.from_numpy_matrix(A)
 
-datafile = open('/home/grzfrmbl/goProjects/oc2_tsp/graph/path.csv', 'r')
+datafile = open('graph/path.csv', 'r')
 myreader = csv.reader(datafile)
 
 r = [int(i) for i in list(myreader)[0]]
@@ -37,4 +37,4 @@ for ctr, edgelist in enumerate(edges):
     nx.draw_networkx_edges(G,pos=pos,edgelist=edgelist,edge_color = colors[ctr], width=linewidths[ctr])
 
 nx.draw(G, pos)
-plt.savefig("/home/grzfrmbl/goProjects/oc2_tsp/graph/graph.png")
+plt.savefig("graph/graph.png")

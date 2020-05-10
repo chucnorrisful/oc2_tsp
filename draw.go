@@ -10,7 +10,7 @@ import (
 )
 
 func draw() {
-	cmd := exec.Command("python3", "/home/grzfrmbl/goProjects/oc2_tsp/graph/draw.py")
+	cmd := exec.Command("python3", "graph/draw.py")
 	out, err := cmd.Output()
 
 	if err != nil {
